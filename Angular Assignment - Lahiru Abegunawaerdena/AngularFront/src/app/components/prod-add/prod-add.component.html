@@ -1,0 +1,33 @@
+<form>
+  <div class="form-group">
+    <label>Item type</label>
+    <select class="form-control" name="item_type" [(ngModel)]="product.item_type" required>
+      <option value="">Select type..</option>
+      <option>Blazers</option>
+      <option>Shirts</option>
+      <option>T-Shirts</option>
+      <option>Trousers</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Brand Name</label>
+    <input type="text" class="form-control" name="brandnm" placeholder="Brand Name" [(ngModel)]="product.brand_name" required>
+  </div>
+
+  <div class="form-group">
+    <label>Color</label>
+    <input type="text" class="form-control" name="col" placeholder="Color" [(ngModel)]="product.color" required>
+  </div>
+
+  <div class="form-group">
+    <label>Quantity</label>
+    <input type="text" class="form-control" name="qty" placeholder="Qty" [(ngModel)]="product.qty" required>
+  </div>
+
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" name="price" placeholder="Price" [(ngModel)]="product.price" required>
+  </div>
+
+  <button type="submit" class="btn btn-default" (click)="submitIt()">Submit</button>
+</form>

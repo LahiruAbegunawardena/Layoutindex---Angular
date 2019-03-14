@@ -1,0 +1,66 @@
+<table class="table table-hover">
+  <thead>
+    <th>&nbsp;&nbsp;#</th>
+    <th>Item type</th>
+    <th>Brand name</th>
+    <th>Color</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <!--<th>Action</th>-->
+
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of this.Data; index as i">
+      <td>{{i+1}}</td>
+      <td>{{item.item_type}}</td>
+      <td>{{item.brand_name}}</td>
+      <td>{{item.color}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.price}}</td>
+      <td>
+        <button class="btn btn-info" (click)="changeIt(item)">Edit</button>
+        <!--<button class="btn btn-danger" (click)="shwDlt(item)">Delete</button>-->
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+<div *ngIf="display==true">
+
+  <form>
+    <div class="form-group">
+      <label>Item type</label>
+      <select class="form-control" name="item_type" [(ngModel)]="product.item_type">
+        <option value="">Select type..</option>
+        <option>Blazers</option>
+        <option>Shirts</option>
+        <option>T-Shirts</option>
+        <option>Trousers</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Brand Name</label>
+      <input type="text" class="form-control" name="brandnm" placeholder="Password" [(ngModel)]="product.brand_name">
+    </div>
+
+    <div class="form-group">
+      <label>Color</label>
+      <input type="text" class="form-control" name="col" placeholder="Password" [(ngModel)]="product.color">
+    </div>
+
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="text" class="form-control" name="qty" placeholder="Password" [(ngModel)]="product.quantity">
+    </div>
+
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" class="form-control" name="price" placeholder="Password" [(ngModel)]="product.price">
+    </div>
+
+    <button type="submit" class="btn btn-default" (click)="submitIt()">Update Values</button>
+  </form>
+
+</div>
